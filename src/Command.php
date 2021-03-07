@@ -66,7 +66,7 @@ abstract class Command extends SymfonyCommand
     /**
      * @param string[] $paths
      */
-    public function loadEnv($paths = ['./config/.env', '.env']): void
+    public static function loadEnv($paths = ['./config/.env', '.env']): void
     {
         foreach ((array)$paths as $path) {
             if (file_exists($path)) {
