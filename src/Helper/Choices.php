@@ -112,7 +112,10 @@ class Choices
                 unset($flatten["{$ns}._"]);
             }
 
-            $key = substr($path, strrpos($path, '.') + 1); // php
+            $key = strrpos($path, '.')
+                ? substr($path, strrpos($path, '.') + 1) // php
+                : $path;
+
             if ($key == '_') {
                 continue;
             }
