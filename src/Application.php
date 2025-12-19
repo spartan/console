@@ -199,7 +199,7 @@ class Application extends SymfonyApplication
      * @return int
      * @throws \Exception
      */
-    public function run(InputInterface $input = null, OutputInterface $output = null)
+    public function run(?InputInterface $input = null, ?OutputInterface $output = null): int
     {
         $input  = $input ?: new ArgvInput();
         $output = $output ?: new ConsoleOutput(OutputInterface::VERBOSITY_NORMAL, null, $this->formatter());
